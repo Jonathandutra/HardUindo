@@ -44,10 +44,12 @@ void setup (){
       int btn_Valor = digitalRead(btn); // guarda o valor do botão 
       if(btn_Valor == HIGH)
       {
-          fall();//
+          fall();/* Chama a fuão fall ( O nome foi sugerido em aula, observe que poderia ser qualquer nome ) */
           btn_Valor = LOW;
       }
     }
+/* A função fall() , server para fazer o controle do semaforo */
+
   void fall(){
       digitalWrite(carGreen,LOW);
       digitalWrite(carYellow,HIGH);
@@ -59,6 +61,7 @@ void setup (){
       digitalWrite(pedGreen,HIGH);
       delay(travessia);
       digitalWrite(pedGreen,LOW);
+// nesta parte fazemos o luz vermelha do pedestre piscar 5 vezes 
 
       for(int x = 0;x<5;x++){
         digitalWrite(pedRed,HIGH);
